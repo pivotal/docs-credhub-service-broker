@@ -11,11 +11,11 @@ This topic describes how to use CredHub Service Broker.
 
 1. Create a service instance by running cf create-service credhub default <my-service> -c '{"name":"credential-name","value":"cred-value"}'
 
-1. Bind the service instance to your application by running cf bind-service <my-app> <my-service>
+1. Bind the service instance to your app by running cf bind-service <my-app> <my-service>
 
-1. Restart your application by running cf restart <my-app>
+1. Restart your app by running cf restart <my-app>
 
-1. Your application should now have access to the credential created in the first step. To verify run cf env <my-app> and you should see a credhub ref.
+1. Your app should now have access to the credential created in the first step. To verify run cf env <my-app> and you should see a credhub ref.
 
 **You can also use this section to include information about Architecture and Troubleshooting for known errors. 
 If you include a Troubleshooting section, follow the Symptom/Explanation format used in the 
