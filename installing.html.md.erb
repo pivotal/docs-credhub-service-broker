@@ -11,14 +11,34 @@ This topic describes how to install and configure YOUR-PRODUCT-NAME.
 
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file. 
 
-1. Under the **Import a Product** button, click **+** next to the version number of YOUR-PRODUCT-NAME. 
+1. Under the **Import a Product** button, click **+** next to the version number of CredHub Service Broker.
 This adds the tile to your staging area.
 
-1. Click the newly added **YOUR-PRODUCT-NAME** tile.
+1. Click the newly added **CredHub Service Broker** tile.
 
 1. **This portion of the procedure should tell the users how to configure the newly added tile by
 walking them through the sections. Which fields should they fill out? What are the different
-checkboxes? Include relevant screenshots here.** 
+checkboxes? Include relevant screenshots here.**
+
+1. Under the **Settings** tab, click **Assign AZs and Networks** in the side panel.
+
+1. Select the region under **Place singleton jobs in** and **Balance other jobs in**.
+
+1. Select the **Network** to deploy to tile to.
+
+1. Click **Save**
+
+1. Click **Services Access** in the side panel.
+
+1. Ensure **Enable global access to plans of service CredHub Service Broker** is checked.
+
+1. Click **Save**
+
+1. Click on **Errands** in the side panel.
+
+1. Ensure **deploy-all** is set to **Default (On)** under **Post-Deploy Errands**.
+
+1. Ensure **delete-all** is set to **Default (On)** under **Pre-Delete Errands**.
 
 1. Click **Save**.
 

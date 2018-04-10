@@ -1,14 +1,21 @@
 ---
-title: Using YOUR-PRODUCT-NAME
+title: Using CredHub Service Broker
 owner: Partners
 ---
 
-This topic describes how to use YOUR-PRODUCT-NAME.
+This topic describes how to use CredHub Service Broker.
 
-##<a id='using'></a> Using YOUR-PRODUCT-NAME
+##<a id='using'></a> Using CredHub Service Broker
 
 **This topic should include any instructions for how to use the service or dashboard created by the tile. 
-Give procedures for how to perform the different functions offered by your product and provide screenshots where necessary.** 
+
+1. Create a service instance by running cf create-service credhub default <my-service> -c '{"name":"credential-name","value":"cred-value"}'
+
+1. Bind the service instance to your application by running cf bind-service <my-app> <my-service>
+
+1. Restart your application by running cf restart <my-app>
+
+1. Your application should now have access to the credential created in the first step. To verify run cf env <my-app> and you should see a credhub ref.
 
 **You can also use this section to include information about Architecture and Troubleshooting for known errors. 
 If you include a Troubleshooting section, follow the Symptom/Explanation format used in the 
