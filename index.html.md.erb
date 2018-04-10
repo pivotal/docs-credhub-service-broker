@@ -1,46 +1,29 @@
 ---
-title: CredHub Service Broker
-owner: Partners
+title: CredHub Service Broker for PCF
+owner: CredHub
 ---
 
-**This topic begins with a brief description of what the product tile (e.g. Apigee Edge Service Broker for PCF) does, 
-whereas the Overview section below describes what the service itself (e.g. Apigee Edge) does. See below for an example.**
-
-The CredHub Service Broker allows apps on the platform to access credentials in CredHub for services
-that are not on the platform. The CredHub Service Broker leverages the secure service instance credentials workflow
-to prevent credential exposure in the app environment and the CF API.
-
-**Note**: This description will appear under **OVERVIEW** in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io).
+The CredHub Service Broker for Pivotal Cloud Foundry (PCF) allows apps running on Pivotal Application Service (PAS) to access credentials in CredHub for services
+that are not on PAS. 
+The service uses secure service instance credentials 
+to prevent credential exposure in the app environment and the Cloud Foundry API.
 
 ## <a id='overview'></a>Overview
-
-**The overview describes the service that your product offers to PCF developers. 
-Make sure to overview the features of the integration.
-Don't focus only on the overview of your product that is being integrated.
-See below for an example.**
 
 The CredHub Service Broker for PCF registers a service broker with PCF and exposes its service plans on the
 Marketplace. Developers can then create service instances using Apps Manager or the Cloud Foundry Command
 Line Interface (cf CLI) and bind them to their apps.
 
 Creating a Credhub Service Broker instance and binding it to an app creates a credential in CredHub and provides the reference
-to that credential in the app's environment. This allows developers to deploy apps which will be able to securely access
-credentials for services that are not running on the platform.
-
-**Note**: This overview will appear under **OVERVIEW**, combined with the description above in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io).
+to that credential in the app environment. 
+This allows developers to deploy apps that can securely access
+credentials for services that are not running on PAS.
 
 ## <a id='features'></a>Key Features
 
-**Note**: This feature list will appear under **FEATURES** in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io). 
-Make sure you list the key features of the tile (the integration). 
-We cannot accept a list of the key features of your product that we are integrating.
+CredHub Service Broker for PCF includes the following key features:
 
-CredHub Service Brokers includes the following key features:
-
-* Secure access to service credentials for services that are not running on the platform
+* Secure access to service credentials for services that are not running on PAS
 
 ## <a id="snapshot"></a>Product Snapshot
 
@@ -67,7 +50,7 @@ The following table provides version and version-support information about CredH
     </tr>
     <tr>
         <td>Compatible Pivotal Application Service (formerly known as Elastic Runtime) version(s)</td>
-        <td>v2.0.X, v2.1.X</td>
+        <td>v2.0.x, v2.1.x</td>
     </tr>
     <tr>
         <td>IaaS support</td>
@@ -82,25 +65,14 @@ The following table provides version and version-support information about CredH
 
 ## <a id="reqs"></a>Requirements
 
-**Provide any general or specific requirements, prerequisites, or dependencies here. 
-A general requirement might be something like, "An AppDynamics account." 
-A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
+CredHub Service Broker for PCF has the following requirements:
 
-CredHub Service Broker has the following requirements:
++ PAS v2.0 or later
++ Secure service instance credentials enabled in runtime CredHub
 
-+ PAS tile configured with a runtime CredHub
-
-+ Secure Service Instance Credentials enabled for runtime Credhub
-
-## <a id="limitations"></a>Limitations
-
-**List any known limitations.**
+To enable secure service instance credentials in runtime CredHub, see [Securing Services Instance Credentials with Runtime CredHub (Beta)](https://docs.pivotal.io/pivotalcf/opsguide/secure-si-creds.html).
 
 ## <a id="feedback"></a>Feedback
 
 If you have a feature request, questions, or information about a bug, please email
 [Pivotal Cloud Foundry Feedback](mailto:cf-feedback@pivotal.io)
-
-## <a id='license'></a>License
-
-**List any license information here.**
