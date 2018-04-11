@@ -5,7 +5,7 @@ owner: CredHub
 
 This topic describes how to use CredHub Service Broker for Pivotal Cloud Foundry (PCF).
 
-##<a id='using'></a> Using CredHub Service Broker for PCF
+##<a id='create'></a> Create and Bind a Service Instance
 
 Creating a Credhub Service Broker instance and binding it to an app creates a credential in CredHub and provides the reference
 to that credential in the app environment. 
@@ -29,10 +29,14 @@ Run the following command:
 	<br><br>
 	<pre class="terminal">
 	cf create-service credhub default my-credhub-instance \
-	 -c '{"name":"my-cred","value":"ABCDEFGHIJK123456789"}
+	 -c '{"name":"MY_CRED","value":"ABCDEFGHIJK123456789"}
 	</pre>
 
-1. Bind the service instance to your app. 
+1. Ensure that your app is written to discover the credential in the app environment. 
+For example, in Ruby you would discover the credential value provided above with `ENV['MY_CRED']`.
+If you need to modify your app code, you must re-push the app before continuing. 
+
+1. Bind the CredHub Service Broker service instance to your app. 
 	Run the following command:
 
 	```

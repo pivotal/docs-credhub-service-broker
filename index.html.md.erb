@@ -3,9 +3,11 @@ title: CredHub Service Broker for PCF
 owner: CredHub
 ---
 
-The CredHub Service Broker for Pivotal Cloud Foundry (PCF) allows apps running on Pivotal Application Service (PAS) to access credentials in CredHub for services
-that are not on PAS.
-The service uses secure service instance credentials
+The CredHub Service Broker for Pivotal Cloud Foundry (PCF) allows apps running on Pivotal Application Service (PAS) to access secure credentials in CredHub. 
+
+Apps can use these credentials to authenticate with services not on PAS. These may include services running within PCF such as Spring Cloud Services for PCF or services external to PCF.
+
+The CredHub Service Broker for PCF uses secure service instance credentials
 to prevent credential exposure in the app environment.
 
 ## <a id='overview'></a>Overview
