@@ -19,22 +19,25 @@ Run the following command:
 
 	```
 	cf create-service credhub default SERVICE-INSTANCE \
-	 -c '{"name":"CREDENTIAL-NAME","value":"CREDENTIAL-VALUE"}
+	 -c '{"CREDENTIAL-NAME":"CREDENTIAL-VALUE"}
 	``` 
 	<br>
 	Where:
 	* `SERVICE-INSTANCE` is a name for your new service instance. 
 	* `CREDENTIAL-NAME` is the name for the credential you want to provide to services that are not running on PAS.
 	* `CREDENTIAL-VALUE` is the value of the credential.
+	<p class="note"><strong>Note</strong>: You can provide multiple credentials as a JSON list. For example, <code>{"MY_CREDHUB_CRED": "1234", "MY_CREDHUB_CRED2": "5678"}</code>.</p>
 	<br><br>
 	<pre class="terminal">
 	cf create-service credhub default my-credhub-instance \
-	 -c '{"name":"MY_CRED","value":"ABCDEFGHIJK123456789"}
+	 -c '{"name":"MY_CREDHUB_CRED","value":"ABCDEFGHIJK123456789"}
 	</pre>
 
-1. Ensure that your app is written to discover the credential in the app environment. 
-For example, in Ruby you would discover the credential value provided above with `ENV['MY_CRED']`.
-If you need to modify your app code, you must re-push the app before continuing. 
+1. Ensure that your app is written to discover the credential in the app environment.
+	<br><br>
+	`VCAP_SERVICES` is an environment variable that exists within every container. Access the `credhub` JSON object within `VCAP_SERVICES` to discover the credentials. For example, in Ruby you would access this JSON object with `ENV['VCAP_SERVICES']['credhub']`.
+	<br><br>
+	If you need to modify your app code, you must re-push the app before continuing. 
 
 1. Bind the CredHub Service Broker service instance to your app. 
 	Run the following command:
@@ -51,8 +54,62 @@ If you need to modify your app code, you must re-push the app before continuing.
 	```
 
 1. Your app should now have access to the credential created in step 1. 
-	To verify that your app can access the credential, run the following command and locate the CredHub reference:
+	To verify that your credential is in the app environment, run the following command and locate the CredHub reference under `VCAP_SERVICES` in the output:
 
 	```
 	cf env MY-APP
 	```
+	<br><br>
+	For example:
+	<pre class="terminal">
+	cf env my-app
+	Getting env variables for app my-app in org example / space example as admin...
+	OK
+	System-Provided:
+	{
+	 "VCAP_SERVICES": {
+	  "credhub": [
+	   {
+	    "binding_name": null,
+	    "credentials": {
+	     "credhub-ref": "/credhub-service-broker/credhub/ac517e09-2f5e-475a-bf87-ca4275faa536/credentials"
+	    },
+	    "instance_name": "credhub",
+	    "label": "credhub",
+	    "name": "credhub",
+	    "plan": "default",
+	    "provider": null,
+	    "syslog_drain_url": null,
+	    "tags": [
+	     "credhub"
+	    ],
+	    "volume_mounts": []
+	   }
+	  ]
+	 }
+	}
+	</pre>
+
+##<a id='update'></a> Update Credentials
+
+Perform the following steps to update the credentials in a CredHub Service Broker service instance:
+
+1. Create a CredHub Service Broker service instance.
+Run the following command:
+
+	```
+	cf update-service credhub default SERVICE-INSTANCE \
+	 -c '{"CREDENTIAL-NAME":"CREDENTIAL-VALUE"}
+	``` 
+	<br>
+	Where:
+	* `SERVICE-INSTANCE` is the name of your existing CredHub Service Broker service instance. 
+	* `CREDENTIAL-NAME` is the name for the updated credential you want to provide to services that are not running on PAS.
+	* `CREDENTIAL-VALUE` is the value of the credential.
+	<p class="note"><strong>Note</strong>: You can update multiple credentials as a JSON list. For example, <code>{"MY_CREDHUB_CRED": "1234", "MY_CREDHUB_CRED2": "5678"}</code>.</p>
+	<br><br>
+	<pre class="terminal">
+	cf update-service credhub default my-credhub-instance \
+	 -c '{"name":"MY_CREDHUB_CRED","value":"ABCDEFGHIJK123456789"}
+	</pre>
+
