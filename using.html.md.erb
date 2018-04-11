@@ -33,9 +33,9 @@ Run the following command:
 	 -c '{"name":"MY\_CREDHUB\_CRED","value":"ABCDEFGHIJK123456789"}
 	</pre>
 
-1. Ensure that your app is written to discover the credential in the app environment.
+1. Ensure that your app is written to use the credential that was provided through the service creation.
 	<br><br>
-	`VCAP_SERVICES` is an environment variable that exists within every container. Access the `credhub` JSON object within `VCAP_SERVICES` to discover the credentials. For example, in Ruby you would access this JSON object with `ENV['VCAP_SERVICES']['credhub']`.
+	`VCAP_SERVICES` is an environment variable that exists in every container. Access the `credhub` JSON object within `VCAP_SERVICES` to discover the credentials. For example, in Ruby you would access this JSON object with `ENV['VCAP_SERVICES']['credhub']`.
 	<br><br>
 	If you need to modify your app code, you must re-push the app before continuing. 
 
