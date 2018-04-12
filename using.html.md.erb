@@ -59,7 +59,7 @@ Run the following command:
 	```
 	cf env MY-APP
 	```
-	<br><br>
+	<br>
 	For example:
 	<pre class="terminal">
 	cf env my-app
@@ -107,7 +107,7 @@ Run the following command:
 	* `CREDENTIAL-NAME` is the name for the updated credential you want to provide to services that are not running on PAS.
 	* `CREDENTIAL-VALUE` is the value of the credential.
 	<p class="note"><strong>Note</strong>: You can update multiple credentials as a JSON list. For example, <code>{"MY\_CREDHUB\_CRED": "1234", "MY\_CREDHUB\_CRED2": "5678"}</code>.</p>
-	<br><br>
+	<br>
 	<pre class="terminal">
 	cf update-service credhub default my-credhub-instance \
 	 -c '{"name":"MY\_CREDHUB\_CRED","value":"ABCDEFGHIJK123456789"}
