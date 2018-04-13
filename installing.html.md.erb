@@ -7,6 +7,8 @@ This topic describes how to install and configure CredHub Service Broker for Piv
 
 ##<a id='install'></a> Install CredHub Service Broker for PCF
 
+To install the CredHub Service Broker for PCF tile on the Ops Manager Installation Dashboard, do the following:
+
 1. Download the product file from [Pivotal Network](https://network.pivotal.io/products/credhub-service-broker).
 
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file. 
@@ -18,9 +20,15 @@ This adds the tile to your staging area.
 
 ##<a id='config'></a> Configure CredHub Service Broker for PCF
 
-Click the newly added **CredHub Service Broker for PCF** tile.
+To configure the CredHub Service Broker for PCF:
+
+1. Click the newly added **CredHub Service Broker for PCF** tile.
+
+2. Follow the procedures below.
 
 ###<a id='azs-networks'></a> Configure AZs and Networks
+
+To set the availability zones and network to deploy on, do the following: 
 
 1. Click **Assign AZs and Networks**.
 
@@ -34,6 +42,9 @@ Click the newly added **CredHub Service Broker for PCF** tile.
 
 ###<a id='services-access'></a> Configure Services Access
 
+To confirm the default network that the CredHub Service Broker for PCF will be deployed on,
+do the following: 
+
 1. Click **Services Access**.
 
 	![Enable global access](images/enable-service-access.png)
@@ -44,6 +55,10 @@ Click the newly added **CredHub Service Broker for PCF** tile.
 
 ###<a id='errands'></a> Configure Errands
 
+To determine the errands will run after deployment
+and to ensure that the pre-delete errands will run if the tile is ever uninstalled,
+do the following: 
+ 
 1. Click **Errands**.
 
 	![Errands](images/errands-are-turned-on.png)
@@ -56,5 +71,9 @@ Click the newly added **CredHub Service Broker for PCF** tile.
 
 ##<a id='deploy'></a> Deploy CredHub Service Broker for PCF
 
-Return to the Ops Manager Installation Dashboard and click **Apply Changes** to deploy CredHub Service Broker for PCF.
+To complete the installation and deploy the CredHub Service Broker for PCF tile, do the following:
+
+1. Return to the Ops Manager Installation Dashboard.
+
+2. Click **Apply Changes** to deploy CredHub Service Broker for PCF.
 
