@@ -9,6 +9,14 @@ This topic describes how to install and configure CredHub Service Broker for Piv
 
 To install the CredHub Service Broker for PCF tile on the Ops Manager Installation Dashboard, do the following:
 
+<p class="note"><strong>Note:</strong>
+In order to install and configure the CredHub Service Broker, you must have an instance of CredHub available.
+In the Pivotal Application Service (PAS) tile, the default number of CredHub instances is <code>0</code>.
+For high availability, you must set the number of CredHub instances to at least <code>2</code>.
+You can configure the number of CredHub instances in the <b>Resource Config</b> tab of the PAS tile.
+For more information on installing and configuring PAS for your chosen IaaS, see <a href="https://docs.pivotal.io/pivotalcf/customizing/pas.html">PAS</a>.
+</p>
+
 1. Download the product file from [Pivotal Network](https://network.pivotal.io/products/credhub-service-broker).
 
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file. 
