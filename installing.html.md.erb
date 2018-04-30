@@ -5,17 +5,21 @@ owner: CredHub
 
 This topic describes how to install and configure CredHub Service Broker for Pivotal Cloud Foundry (PCF).
 
-##<a id='prereq'></a> Prerequisite
+##<a id='prereq'></a> Prerequisites
 
-In order to install and configure the CredHub Service Broker, verify that you have an instance of CredHub available.
+In order to install and configure the CredHub Service Broker, you must have an instance of CredHub available.
+</br>
+</br>
+To confirm the number of CredHub instances available, perform the following actions:
 
-1. Click the **Pivotal Application Service** (PAS) tile in the Ops Manager **Installation Dashboard**.
+1. Click the **Pivotal Application Service** (PAS) tile in the Ops ManagerInstallation Dashboard.
 
 1. Select the **Resource Config** tab.
 
 1. Locate the **CredHub** job and verify the amount of configured instances. The default number of CredHub instances is <code>0</code>.
 For high availability, the number of CredHub instances must be set to at least <code>2</code>.
 
+For more information on installing and configuring PAS for your chosen IaaS, see <a href="https://docs.pivotal.io/pivotalcf/customizing/pas.html">PAS</a>.
 
 ##<a id='install'></a> Install CredHub Service Broker for PCF
 
