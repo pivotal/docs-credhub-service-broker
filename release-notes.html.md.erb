@@ -5,6 +5,18 @@ owner: CredHub
 
 This topic contains the release notes for CredHub Service Broker for Pivotal Cloud Foundry (PCF).
 
+##<a id="v1.0.2"></a> v1.0.2
+
+**Release Date:** June 6, 2018
+
+### Bug Fixes
+
+* The tile will now appropriately clean up the deployed application service broker when uninstalled.
+
+### Known Issues
+
+* It is not possible to cleanly upgrade from 1.0.0. Please see 1.0.0 known issues.
+
 ##<a id="v1.0.1"></a> v1.0.1
 
 **Release Date:** May 7, 2018
@@ -15,7 +27,8 @@ This topic contains the release notes for CredHub Service Broker for Pivotal Clo
 
 ### Known Issues
 
-* Removing the tile does not appropriately delete the service broker application.
+* Removing the tile does not appropriately delete the service broker application. After uninstalling the tile or upgrading to a newer version, it is safe to delete the application manually.
+* It is not possible to cleanly upgrade from 1.0.0. Please see 1.0.0 known issues.
 
 ##<a id="v1.0.0"></a> v1.0.0
 
@@ -30,4 +43,4 @@ First CredHub Service Broker for PCF release.
 
 ### Known Issues
 
-There are no known issues for this release.
+* Upgrading the CredHub Service Broker tile from 1.0.0 and applying changes will fail. To upgrade to newer versions of the tile, please uninstall CredHub Service Broker 1.0.0 and apply changes, then add the newer version of the tile and apply changes again. Please note that apps will lose access to credentials they are receiving via the CredHub Service Broker, and that you will need to recreate your services after reinstalling. All existing CredHub services will be purged during the uninstallation of the CredHub Service Broker 1.0.0 tile.
