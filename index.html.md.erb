@@ -3,25 +3,31 @@ title: CredHub Service Broker for PCF
 owner: CredHub
 ---
 
-<p class="note warning"><strong>WARNING</strong>: Use of the CredHub Service Broker for Pivotal Cloud Foundry (PCF) is only supported for production workloads when used with Pivotal Application Service version 2.2.0 or later. Please do not use the CredHub Service Broker in production if you are not running at least PAS 2.2.</p>
+<p class="note warning"><strong>WARNING</strong>: 
+    CredHub Service Broker for Pivotal Cloud Foundry (PCF) is only supported 
+    for production workloads when used with Pivotal Application Service v2.2.0 or later. 
+    Do not use the CredHub Service Broker in production if you are not running at least PAS v2.2.</p>
 
-The CredHub Service Broker for PCF allows apps running on Pivotal Application Service (PAS) to access secure credentials in CredHub. 
+The CredHub Service Broker for PCF allows apps running on Pivotal Application 
+Service (PAS) to access secure credentials in CredHub. 
 
-Apps can use these credentials to authenticate with services not on PAS. These may include services running within PCF such as Spring Cloud Services for PCF or services external to PCF.
+Apps can use these credentials to authenticate with services not on PAS. 
+These may include services running within PCF such as Spring Cloud Services for PCF or services external to PCF.
 
 The CredHub Service Broker for PCF uses secure service instance credentials
 to prevent credential exposure in the app environment.
 
 ## <a id='overview'></a>Overview
 
-The CredHub Service Broker for PCF registers a service broker with PCF and exposes its service plans on the
-Marketplace. Developers can then create service instances using Apps Manager or the Cloud Foundry Command
+The CredHub Service Broker for PCF registers a service broker with PCF and exposes 
+its service plans on the Marketplace. 
+Developers can then create service instances using Apps Manager or the Cloud Foundry Command
 Line Interface (cf CLI) and bind them to their apps.
 
-Creating a Credhub Service Broker instance and binding it to an app creates a credential in CredHub and provides the reference
-to that credential in the app environment. 
-This allows developers to deploy apps that can securely access
-credentials for services that are not running on PAS.
+Creating a Credhub Service Broker instance and binding it to an app creates a credential 
+in CredHub and provides the reference to that credential in the app environment. 
+This allows developers to deploy apps that can securely access credentials for 
+services that are not running on PAS.
 
 ## <a id='features'></a>Key Features
 
@@ -38,11 +44,11 @@ The following table provides version and version-support information about CredH
     <th>Details</th>
     <tr>
         <td>Tile version</td>
-        <td>v1.0.0</td>
+        <td>v1.0.2</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>April 12, 2018</td>
+        <td>June 6, 2018</td>
     </tr>
     <tr>
         <td>Software component version</td>
@@ -50,7 +56,7 @@ The following table provides version and version-support information about CredH
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
-        <td>v2.0.x and v2.1.x</td>
+        <td>v2.0.x, v2.1.x, and v2.2</td>
     </tr>
     <tr>
         <td>Compatible Pivotal Application Service version(s) (GA)</td>
@@ -79,4 +85,5 @@ CredHub Service Broker for PCF has the following requirements:
 + PAS v2.0 or PAS v2.1 (Beta)
 + Secure service instance credentials enabled in runtime CredHub
 
-To enable secure service instance credentials in runtime CredHub, see [Securing Services Instance Credentials with Runtime CredHub (Beta)](https://docs.pivotal.io/pivotalcf/opsguide/secure-si-creds.html).
+To enable secure service instance credentials in runtime CredHub, see [Securing Services 
+Instance Credentials with Runtime CredHub (Beta)](https://docs.pivotal.io/pivotalcf/opsguide/secure-si-creds.html).
