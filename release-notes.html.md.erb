@@ -11,7 +11,7 @@ This topic contains the release notes for CredHub Service Broker for Pivotal Clo
 
 ### Bug Fixes
 
-Fix issue where pre_start script of deploy_all errands fails on a jq call.
+The `pre_start` script for `deploy_all` errands no longer fails on `jq` calls.
 
 ### Known Issues
 
@@ -25,9 +25,12 @@ There are no known issues for this release.
 
 * [Upgrade to Go 1.13.2 to patch a security vulnerability in Go's crypto/x509 library](https://www.pivotaltracker.com/story/show/169320427)
 
-### Known Issues
+### Known Issue
 
-The pre_start script for the deploy_all errand fails when trying to call jq as jq does not exist on the stemcell.
+This release has the following issue:
+
+* The `pre_start` script for the `deploy_all` errand fails on `jq` calls.
+This is because `jq` does not exist on the stemcell.
 
 ##<a id="v1.4.3"></a> v1.4.3
 
@@ -74,6 +77,10 @@ There are no known issues for this release.
 
 * Fixes version number to return correctly without `rc`.
 
+### Known Issues
+
+There are no known issues for this release.
+
 ##<a id="1-3-2"></a> v1.3.2
 
 **Release Date:** June 13, 2019
@@ -82,7 +89,9 @@ There are no known issues for this release.
 
 * Bump CF_CLI dependency due to CVE
 
-### Known Issues
+### Known Issue
+
+This release has the following issue:
 
 * Version number contains `rc` despite it being a stable, public release. This is fixed in 1.3.3.
 
@@ -94,6 +103,10 @@ There are no known issues for this release.
 
 * Adds support for Xenial stemcell
 
+### Known Issues
+
+There are no known issues for this release.
+
 ##<a id="1-2-0"></a> v1.2.0
 
 **Release Date:** November 26, 2018
@@ -102,6 +115,10 @@ There are no known issues for this release.
 
 * Bumps Broker API dependency to version 3.0.7 due to CVE 2018-15759
 * Returns correct exit code when setting up the service broker
+
+### Known Issues
+
+There are no known issues for this release.
 
 ##<a id="1-1-0"></a> v1.1.0
 
@@ -112,6 +129,10 @@ There are no known issues for this release.
 * Makes tile compatible with Credhub 2.0
 * Makes tile compatible with OpsMan 2.3 and OpsMan 2.4
 
+### Known Issues
+
+There are no known issues for this release.
+
 ##<a id="1-0-2"></a> v1.0.2
 
 **Release Date:** June 6, 2018
@@ -120,7 +141,9 @@ There are no known issues for this release.
 
 * The tile will now appropriately clean up the deployed application service broker when uninstalled.
 
-### Known Issues
+### Known Issue
+
+This release has the following issue:
 
 * It is not possible to cleanly upgrade from 1.0.0. Please see 1.0.0 known issues.
 
@@ -133,6 +156,8 @@ There are no known issues for this release.
 * The tile will now deploy alongside service brokers with nonrandom Plan IDs.
 
 ### Known Issues
+
+This release has the following issues:
 
 * Removing the tile does not appropriately delete the service broker application. After uninstalling the tile or upgrading to a newer version, it is safe to delete the application manually.
 * It is not possible to cleanly upgrade from 1.0.0. Please see 1.0.0 known issues.
@@ -148,6 +173,8 @@ First CredHub Service Broker for PCF release.
 * Provides secure access to service credentials for services that are not running on Pivotal Application Service (PAS)
 * Allows developers to pass custom JSON to their app through service creation
 
-### Known Issues
+### Known Issue
+
+This release has the following issue:
 
 * Upgrading the CredHub Service Broker tile from 1.0.0 and applying changes will fail. To upgrade to newer versions of the tile, please uninstall CredHub Service Broker 1.0.0 and apply changes, then add the newer version of the tile and apply changes again. Please note that apps will lose access to credentials they are receiving via the CredHub Service Broker, and that you will need to recreate your services after reinstalling. All existing CredHub services will be purged during the uninstallation of the CredHub Service Broker 1.0.0 tile.
