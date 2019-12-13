@@ -11,11 +11,15 @@ This topic contains the release notes for CredHub Service Broker for Pivotal Clo
 
 ### Bug Fixes
 
-The `pre_start` script for `deploy_all` errands no longer fails on `jq` calls.
++ For <%= vars.app_runtime_full %> (<%= vars.app_runtime_abbr %>) v2.7 and earlier,
+the `pre_start` script for `deploy_all` errands no longer fails on `awk` calls.
 
 ### Known Issues
 
-There are no known issues for this release.
+This release has the following issue:
+
+* For <%= vars.app_runtime_abbr %> v2.8 and later,
+the `pre_start` script for the `deploy_all` errand fails on `jq` calls.
 
 ##<a id="v1.4.4"></a> v1.4.4
 
