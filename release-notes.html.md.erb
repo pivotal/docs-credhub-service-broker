@@ -11,7 +11,7 @@ This topic contains the release notes for CredHub Service Broker for Pivotal Clo
 
 ### Bug Fixes
 
-The `pre_start` script for `deploy_all` errands no longer fails on `python` calls.
++ The `pre_start` script for `deploy_all` errands no longer fails on `python` calls.
 
 ### Known Issues
 
@@ -23,11 +23,14 @@ There are no known issues for this release.
 
 ### Bug Fixes
 
-+ The `pre_start` script for `deploy_all` is now compatible with PAS 2.8.
++ The `pre_start` script for `deploy_all` is now compatible with <%= vars.app_runtime_full %>
+  (<%= vars.app_runtime_abbr %>) v2.8.
 
 ### Known Issues
 
-There are no known issues for this release.
+This release has the following issue:
+
++ The `pre_start` script for `deploy_all` errands fails on `python` calls.
 
 ##<a id="1-4-5"></a> v1.4.5
 
@@ -35,7 +38,7 @@ There are no known issues for this release.
 
 ### Bug Fixes
 
-+ For <%= vars.app_runtime_full %> (<%= vars.app_runtime_abbr %>) v2.7 and earlier,
++ For <%= vars.app_runtime_abbr %> v2.7 and earlier,
 the `pre_start` script for `deploy_all` errands no longer fails on `awk` calls.
 
 ### Known Issues
