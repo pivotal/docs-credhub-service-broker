@@ -7,18 +7,39 @@ This topic describes how to install and configure CredHub Service Broker for Piv
 
 ##<a id='prereq'></a> Prerequisites
 
-To install and configure the CredHub Service Broker, you must have CredHub instances available in your PAS deployment.
+To install and configure the CredHub Service Broker, you must have CredHub instances available
+in your <%= vars.app_runtime_full %> (<%= vars.app_runtime_abbr %>) deployment.
 
 To confirm the number of CredHub instances available, perform the following actions:
 
-1. Click the **Pivotal Application Service** (PAS) tile in the Ops Manager Installation Dashboard.
+1. Click the **Pivotal Application Service** (<%= vars.app_runtime_abbr %>) tile in the Ops Manager Installation Dashboard.
 
 1. Select the **Resource Config** tab.
 
-1. Locate the **CredHub** job and verify that the number of instances is set to at least `1`. In PAS v2.7 and earlier, the default number of CredHub instances is `0`. In PAS v2.8 and later, the default number of CredHub instances is `2`.
-For high availability, the number of CredHub instances must be set to at least `2` in PAS v2.7 and earlier, or `3` in PAS v2.8 and later.
+1. Locate the **CredHub** job and verify that the number of instances is set to at least `1`.
 
-For more information on installing and configuring PAS for your chosen IaaS, see <a href="https://docs.pivotal.io/pivotalcf/customizing/pas.html">PAS</a>.
+    The number of instances that you need depends on both the version of <%= vars.app_runtime_abbr %>
+    and whether you want high availability:
+    <table class="nice">
+	<th>In <%= vars.app_runtime_abbr %> version…</th>
+	<th>For high availability, set to…</th>
+	<th>Default value is…</th>
+	<tr>
+		<td>2.7 and earlier</td>
+		<td><code>2</code> or more</td>
+		<td><code>0</code></td>
+	</tr>
+	<tr>
+		<td>2.8 and later</td>
+		<td><code>3</code> or more</td>
+		<td><code>2</code></td>
+	</tr>
+  </table>
+
+
+For more information on installing and configuring <%= vars.app_runtime_abbr %> for your chosen IaaS,
+see <a href="https://docs.pivotal.io/pivotalcf/customizing/pas.html"><%= vars.app_runtime_abbr %></a>.
+
 
 ##<a id='install'></a> Install CredHub Service Broker for PCF
 
