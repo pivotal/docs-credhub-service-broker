@@ -100,6 +100,9 @@ Run the following command:
 	```
 	cf update-service credhub default SERVICE-INSTANCE \
 	 -c '{"CREDENTIAL-NAME":"CREDENTIAL-VALUE"}
+
+	cf update-service SERVICE-INSTANCE \ 
+	 -c '{"CREDENTIAL-NAME":"CREDENTIAL-VALUE"}
 	``` 
 	<br>
 	Where:
@@ -109,7 +112,7 @@ Run the following command:
 	<p class="note"><strong>Note</strong>: You can update multiple credentials as a JSON list. For example, <code>{"MY\_CREDHUB\_CRED": "1234", "MY\_CREDHUB\_CRED2": "5678"}</code>.</p>
 	<br>
 	<pre class="terminal">
-	cf update-service credhub default my-credhub-instance \
+	cf update-service SERVICE-INSTANCE \ 
 	 -c '{"name":"MY\_CREDHUB\_CRED","value":"ABCDEFGHIJK123456789"}
 	</pre>
 
