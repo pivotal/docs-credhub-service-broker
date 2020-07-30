@@ -3,15 +3,15 @@ title: Release Notes for CredHub Service Broker
 owner: CredHub
 ---
 
-This topic contains the release notes for CredHub Service Broker for Pivotal Cloud Foundry (PCF).
+This topic contains the release notes for CredHub Service Broker for <%= platform_old %> (PCF).
 
 ##<a id="1-4-8"></a> v1.4.8
 
 **Release Date:** July 23, 2020
 
-### Bug Fixes
+### Resolved Issues
 
-+ Bump dependencies.
++ Updated dependencies.
 
 ### Known Issues
 
@@ -21,9 +21,9 @@ There are no known issues for this release.
 
 **Release Date:** December 13, 2019
 
-### Bug Fixes
+### Resolved Issues
 
-+ The `pre_start` script for `deploy_all` errands no longer fails on `python` calls.
++ The `pre_start` script for `deploy-all` errands no longer fails on `python` calls.
 
 ### Known Issues
 
@@ -33,7 +33,7 @@ There are no known issues for this release.
 
 **Release Date:** December 12, 2019
 
-### Bug Fixes
+### Resolved Issues
 
 + The `pre_start` script for `deploy_all` is now compatible with <%= vars.app_runtime_full %>
   (<%= vars.app_runtime_abbr %>) v2.8.
@@ -42,46 +42,46 @@ There are no known issues for this release.
 
 This release has the following issue:
 
-+ The `pre_start` script for `deploy_all` errands fails on `python` calls.
++ The `pre_start` script for `deploy-all` errands fails on `python` calls.
 
 ##<a id="1-4-5"></a> v1.4.5
 
 **Release Date:** November 1, 2019
 
-### Bug Fixes
+### Resolved Issues
 
 + For <%= vars.app_runtime_abbr %> v2.7 and earlier,
-the `pre_start` script for `deploy_all` errands no longer fails on `awk` calls.
+the `pre_start` script for `deploy-all` errands no longer fails on `awk` calls.
 
 ### Known Issues
 
 This release has the following issue:
 
 * For <%= vars.app_runtime_abbr %> v2.8 and later,
-the `pre_start` script for the `deploy_all` errand fails on `jq` calls.
+the `pre_start` script for the `deploy-all` errand fails on `jq` calls.
 
 ##<a id="1-4-4"></a> v1.4.4
 
 **Release Date:** October 30, 2019
 
-### Bug Fixes
+### Resolved Issues
 
-* [Upgrade to Go 1.13.2 to patch a security vulnerability in Go's crypto/x509 library](https://www.pivotaltracker.com/story/show/169320427)
+* [Upgraded to Go v1.13.2 to patch a security vulnerability in Go's crypto/x509 library](https://www.pivotaltracker.com/story/show/169320427)
 
 ### Known Issue
 
 This release has the following issue:
 
-* The `pre_start` script for the `deploy_all` errand fails on `jq` calls.
+* The `pre_start` script for the `deploy-all` errand fails on `jq` calls.
 This is because `jq` does not exist on the stemcell.
 
 ##<a id="1-4-3"></a> v1.4.3
 
 **Release Date:** October 4, 2019
 
-### Bug Fixes
+### Resolved Issues
 
-* [Upgrade to Go 1.13.1 to patch net/http vulnerability](https://www.pivotaltracker.com/story/show/168951595)
+* [Upgraded to Go v1.13.1 to patch net/http vulnerability](https://www.pivotaltracker.com/story/show/168951595)
 
 ### Known Issues
 
@@ -91,9 +91,9 @@ There are no known issues for this release.
 
 **Release Date:** September 6, 2019
 
-### Bug Fixes
+### Resolved Issues
 
-* [Update to Go 1.12.8 to patch HTTP/2 vulnerability](https://www.pivotaltracker.com/story/show/168147138)
+* [Updated to Go v1.12.8 to patch HTTP/2 vulnerability](https://www.pivotaltracker.com/story/show/168147138)
 
 ### Known Issues
 
@@ -116,7 +116,7 @@ There are no known issues for this release.
 
 **Release Date:** July 2, 2019
 
-### Bug Fixes
+### Resolved Issues
 
 * Fixes version number to return correctly without `rc`.
 
@@ -128,15 +128,15 @@ There are no known issues for this release.
 
 **Release Date:** June 13, 2019
 
-### Bug Fixes
+### Resolved Issues
 
-* Bump CF_CLI dependency due to CVE
+* Updated CF_CLI dependency due to CVE
 
 ### Known Issue
 
 This release has the following issue:
 
-* Version number contains `rc` despite it being a stable, public release. This is fixed in 1.3.3.
+* Version number contains `rc` despite it being a stable, public release. This is fixed in v1.3.3.
 
 ##<a id="1-3-1"></a> v1.3.1
 
@@ -154,9 +154,9 @@ There are no known issues for this release.
 
 **Release Date:** November 26, 2018
 
-### Bug Fixes
+### Resolved Issues
 
-* Bumps Broker API dependency to version 3.0.7 due to CVE 2018-15759
+* Updated Broker API dependency to v3.0.7 due to CVE 2018–15759
 * Returns correct exit code when setting up the service broker
 
 ### Known Issues
@@ -169,7 +169,7 @@ There are no known issues for this release.
 
 ### Features
 
-* Makes tile compatible with Credhub 2.0
+* Makes tile compatible with CredHub 2.0
 * Makes tile compatible with <%= vars.ops_manager %> 2.3 and <%= vars.ops_manager %> 2.4
 
 ### Known Issues
@@ -180,30 +180,40 @@ There are no known issues for this release.
 
 **Release Date:** June 6, 2018
 
-### Bug Fixes
+### Resolved Issues
 
-* The tile will now appropriately clean up the deployed application service broker when uninstalled.
+* The tile now appropriately cleans up the deployed application service broker when uninstalled.
 
 ### Known Issue
 
 This release has the following issue:
 
-* It is not possible to cleanly upgrade from 1.0.0. Please see 1.0.0 known issues.
+* Upgrading the CredHub Service Broker tile from v1.0.0 and applying changes will fail.
+To upgrade to newer versions of the tile, uninstall CredHub Service Broker v1.0.0 and apply changes,
+then add the newer version of the tile and apply changes again.
+Apps will lose access to credentials they are receiving through the CredHub Service Broker, and you
+must to re-create your services after reinstalling. All existing CredHub services are purged when
+uninstalling the CredHub Service Broker v1.0.0 tile.
 
 ##<a id="1-0-1"></a> v1.0.1
 
 **Release Date:** May 7, 2018
 
-### Bug Fixes
+### Resolved Issues
 
-* The tile will now deploy alongside service brokers with nonrandom Plan IDs.
+* The tile now deploys alongside service brokers with nonrandom Plan IDs.
 
 ### Known Issues
 
 This release has the following issues:
 
 * Removing the tile does not appropriately delete the service broker application. After uninstalling the tile or upgrading to a newer version, it is safe to delete the application manually.
-* It is not possible to cleanly upgrade from 1.0.0. Please see 1.0.0 known issues.
+* Upgrading the CredHub Service Broker tile from v1.0.0 and applying changes will fail.
+To upgrade to newer versions of the tile, uninstall CredHub Service Broker v1.0.0 and apply changes,
+then add the newer version of the tile and apply changes again.
+Apps will lose access to credentials they are receiving through the CredHub Service Broker, and you
+must to re-create your services after reinstalling. All existing CredHub services are purged when
+uninstalling the CredHub Service Broker v1.0.0 tile.
 
 ##<a id="1-0-0"></a> v1.0.0
 
@@ -213,11 +223,16 @@ First CredHub Service Broker for PCF release.
 
 ### Features
 
-* Provides secure access to service credentials for services that are not running on Pivotal Application Service (PAS)
+* Provides secure access to service credentials for services that are not running on <%= vars.app_runtime_full %> (<%= vars.app_runtime_abbr %>)
 * Allows developers to pass custom JSON to their app through service creation
 
 ### Known Issue
 
 This release has the following issue:
 
-* Upgrading the CredHub Service Broker tile from 1.0.0 and applying changes will fail. To upgrade to newer versions of the tile, please uninstall CredHub Service Broker 1.0.0 and apply changes, then add the newer version of the tile and apply changes again. Please note that apps will lose access to credentials they are receiving via the CredHub Service Broker, and that you will need to recreate your services after reinstalling. All existing CredHub services will be purged during the uninstallation of the CredHub Service Broker 1.0.0 tile.
+* Upgrading the CredHub Service Broker tile from v1.0.0 and applying changes will fail.
+To upgrade to newer versions of the tile, uninstall CredHub Service Broker v1.0.0 and apply changes,
+then add the newer version of the tile and apply changes again.
+Apps will lose access to credentials they are receiving through the CredHub Service Broker, and you
+must to re-create your services after reinstalling. All existing CredHub services are purged when
+uninstalling the CredHub Service Broker v1.0.0 tile.
