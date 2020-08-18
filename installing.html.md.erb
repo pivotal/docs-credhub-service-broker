@@ -47,12 +47,12 @@ To install the CredHub Service Broker for PCF tile on the <%= vars.ops_manager %
 
 1. Download the product file from [Pivotal Network](https://network.pivotal.io/products/credhub-service-broker).
 
-1. Navigate to the <%= vars.ops_manager %> Installation Dashboard and click **Import a Product** to upload the product file. 
+1. Navigate to the <%= vars.ops_manager %> Installation Dashboard and click **Import a Product** to upload the product file.
 
 1. Under the **Import a Product** button, click **+** next to the version number of CredHub Service Broker for PCF.
 This adds the tile to your staging area.
 
-	![Add CredHub Service Broker tile](images/install-tile.png)
+	![Add CredHub Service Broker tile](images/install-tile.png)<%# Images require alt text that describes the image in detail. %>
 
 ##<a id='config'></a> Configure CredHub Service Broker for PCF
 
@@ -64,15 +64,15 @@ To configure the CredHub Service Broker for PCF:
 
 ###<a id='azs-networks'></a> Configure AZs and Networks
 
-To set the availability zones and network to deploy on, do the following: 
+To set the availability zones and network to deploy on, do the following:
 
 1. Click **Assign AZs and Networks**.
 
-	![Configure AZs and networks](images/azs-networks.png)
+	![Configure AZs and networks](images/azs-networks.png)<%# Images require alt text that describes the image in detail. %>
 
 1. Select a region under **Place singleton jobs in** and **Balance other jobs in**.
 
-1. Select the **Network** where to deploy CredHub Service Broker for PCF. 
+1. Select the **Network** where to deploy CredHub Service Broker for PCF.
 You may select any network.
 
 1. Click **Save**
@@ -80,11 +80,11 @@ You may select any network.
 ###<a id='services-access'></a> Configure Services Access
 
 To confirm the default network that the CredHub Service Broker for PCF will be deployed on,
-do the following: 
+do the following:
 
 1. Click **Services Access**.
 
-	![Enable global access](images/enable-service-access.png)
+	![Enable global access](images/enable-service-access.png)<%# Images require alt text that describes the image in detail. %>
 
 1. Ensure the **Enable global access to plans of service CredHub Service Broker** checkbox is selected.
 
@@ -94,11 +94,11 @@ do the following:
 
 To determine the errands will run after deployment
 and to ensure that the pre-delete errands will run if the tile is ever uninstalled,
-do the following: 
- 
+do the following:
+
 1. Click **Errands**.
 
-	![Errands](images/errands-are-turned-on.png)
+	![Errands](images/errands-are-turned-on.png)<%# Images require alt text that describes the image in detail. %>
 
 1. Ensure **deploy-all** is set to **Default (On)** under **Post-Deploy Errands**.
 
@@ -113,4 +113,3 @@ To complete the installation and deploy the CredHub Service Broker for PCF tile,
 1. Return to the <%= vars.ops_manager %> Installation Dashboard.
 
 2. Click **Apply Changes** to deploy CredHub Service Broker for PCF.
-
