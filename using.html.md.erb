@@ -27,8 +27,8 @@ Run the following command:
 	* `CREDENTIAL-NAME` is the name for the credential you want to provide to services that are not running on PAS.
 	* `CREDENTIAL-VALUE` is the value of the credential.
 	<p class="note"><strong>Note</strong>: You can provide multiple credentials as a JSON list. This JSON list has a maximum size of 64 KB. For example, <code>{"MY\_CREDHUB\_CRED": "1234", "MY\_CREDHUB\_CRED2": "5678"}</code>.</p>
-	<br><br>
-	<pre class="terminal">
+	For example:
+        <pre class="terminal">
 	cf create-service credhub default my-credhub-instance \
 	 -c '{"name":"MY\_CREDHUB\_CRED","value":"ABCDEFGHIJK123456789"}'
 	</pre>
