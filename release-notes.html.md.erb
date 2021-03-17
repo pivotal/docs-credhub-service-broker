@@ -11,8 +11,9 @@ This topic contains the release notes for CredHub Service Broker for <%= vars.pl
 
 ### Resolved Issues
 
-+ Fixes a bug where `Unbind` request would fail when the service is already unbinded (the permission associated with the service binding has already been deleted).
-+ Fixes a bug where `Deprovision` request would fail when the service is already deprovisioned (the credential associated with the service instance has already been deleted).
++ The `Unbind` request no longer fails if the service is already unbound.
+
++ The `Deprovision` request no longer fails if when the service is already deprovisioned.
 
 ### Known Issues
 
