@@ -1,27 +1,27 @@
 ---
-title: Installing and Configuring CredHub Service Broker for PCF
+title: Installing and Configuring CredHub Service Broker
 owner: CredHub
 ---
 
-This topic describes how to install and configure CredHub Service Broker for Pivotal Cloud Foundry (PCF).
+This topic describes how to install and configure CredHub Service Broker.
 
 ##<a id='prereq'></a> Prerequisites
 
 To install and configure the CredHub Service Broker, you must have CredHub instances available
-in your <%= vars.app_runtime_full %> (<%= vars.app_runtime_abbr %>) deployment.
+in your VMware Tanzu Application Service for VMs (TAS for VMs) deployment.
 
 To confirm the number of CredHub instances available, perform the following actions:
 
-1. Click the **<%= vars.app_runtime_full %>** (<%= vars.app_runtime_abbr %>) tile in the <%= vars.ops_manager %> Installation Dashboard.
+1. Click the **TAS for VMs** tile in the Ops Manager Installation Dashboard.
 
 1. Select the **Resource Config** tab.
 
 1. Locate the **CredHub** job and verify that the number of instances is set to at least `1`.
 
-    The number of instances that you need depends on both the version of <%= vars.app_runtime_abbr %>
-    and whether you want high availability:
+    The number of instances that you need depends on both the version of TAS for VMs
+    and whether or not you want high availability:
     <table class="nice">
-	<th>In <%= vars.app_runtime_abbr %> version…</th>
+	<th>In TAS for VMs version…</th>
 	<th>For high availability, set to…</th>
 	<th>Default value is…</th>
 	<tr>
@@ -37,28 +37,26 @@ To confirm the number of CredHub instances available, perform the following acti
   </table>
 
 
-For more information on installing and configuring <%= vars.app_runtime_abbr %> for your chosen IaaS,
-see <a href="https://docs.pivotal.io/pivotalcf/customizing/pas.html"><%= vars.app_runtime_abbr %></a>.
+For more information on installing and configuring TAS for VMs for your chosen IaaS,
+see <a href="https://docs.pivotal.io/pivotalcf/customizing/pas.html">TAS for VMs</a>.
 
 
-##<a id='install'></a> Install CredHub Service Broker for PCF
+##<a id='install'></a> Install CredHub Service Broker
 
-To install the CredHub Service Broker for PCF tile on the <%= vars.ops_manager %> Installation Dashboard, do the following:
+To install the CredHub Service Broker tile on the Ops Manager Installation Dashboard, do the following:
 
-1. Download the product file from [Pivotal Network](https://network.pivotal.io/products/credhub-service-broker).
+1. Download the product file from [Tanzu Network](https://network.pivotal.io/products/credhub-service-broker).
 
-1. Navigate to the <%= vars.ops_manager %> Installation Dashboard and click **Import a Product** to upload the product file.
+1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
 
-1. Under the **Import a Product** button, click **+** next to the version number of CredHub Service Broker for PCF.
+1. Under the **Import a Product** button, click **+** next to the version number of CredHub Service Broker.
 This adds the tile to your staging area.
 
-	![Add CredHub Service Broker tile](images/install-tile.png)<%# Images require alt text that describes the image in detail. %>
+##<a id='config'></a> Configure CredHub Service Broker
 
-##<a id='config'></a> Configure CredHub Service Broker for PCF
+To configure the CredHub Service Broker:
 
-To configure the CredHub Service Broker for PCF:
-
-1. Click the newly added **CredHub Service Broker for PCF** tile.
+1. Click the newly added **CredHub Service Broker** tile.
 
 2. Follow the procedures below.
 
@@ -72,14 +70,14 @@ To set the availability zones and network to deploy on, do the following:
 
 1. Select a region under **Place singleton jobs in** and **Balance other jobs in**.
 
-1. Select the **Network** where to deploy CredHub Service Broker for PCF.
+1. Select the **Network** where to deploy CredHub Service Broker.
 You may select any network.
 
 1. Click **Save**
 
 ###<a id='services-access'></a> Configure Services Access
 
-To confirm the default network that the CredHub Service Broker for PCF will be deployed on,
+To confirm the default network that the CredHub Service Broker will be deployed on,
 do the following:
 
 1. Click **Services Access**.
@@ -106,10 +104,10 @@ do the following:
 
 1. Click **Save**.
 
-##<a id='deploy'></a> Deploy CredHub Service Broker for PCF
+##<a id='deploy'></a> Deploy CredHub Service Broker
 
-To complete the installation and deploy the CredHub Service Broker for PCF tile, do the following:
+To complete the installation and deploy the CredHub Service Broker tile, do the following:
 
-1. Return to the <%= vars.ops_manager %> Installation Dashboard.
+1. Return to the Ops Manager Installation Dashboard.
 
-2. Click **Apply Changes** to deploy CredHub Service Broker for PCF.
+2. Click **Apply Changes** to deploy CredHub Service Broker.

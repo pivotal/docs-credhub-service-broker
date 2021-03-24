@@ -3,14 +3,14 @@ title: Using CredHub Service Broker
 owner: CredHub
 ---
 
-This topic describes how to use CredHub Service Broker for Pivotal Cloud Foundry (PCF).
+This topic describes how to use CredHub Service Broker.
 
 ##<a id='create'></a> Create and Bind a Service Instance
 
 Creating a Credhub Service Broker instance and binding it to an app creates a credential in CredHub and provides the reference
 to that credential in the app environment.
 This allows developers to deploy apps that can securely access
-credentials for services that are not running on PAS.
+credentials for services that are not running on VMware Tanzu Application Service for VMs (TAS for VMs).
 
 To create a service instance of the CredHub Service Broker and bind it to your app, perform the following steps:
 
@@ -23,7 +23,7 @@ Run the following command:
     ```
     Where:
     * `SERVICE-INSTANCE` is a name for your new service instance.
-    * `CREDENTIAL-NAME` is the name for the credential you want to provide to services that are not running on PAS.
+    * `CREDENTIAL-NAME` is the name for the credential you want to provide to services that are not running on TAS for VMs.
     * `CREDENTIAL-VALUE` is the value of the credential.
     <p class="note">
       <strong>Note</strong>: You can provide multiple credentials as a JSON list.
@@ -106,7 +106,8 @@ Run the following command:
     ```
     Where:
     * `SERVICE-INSTANCE` is the name of your existing CredHub Service Broker service instance.
-    * `CREDENTIAL-NAME` is the name for the updated credential you want to provide to services that are not running on PAS.
+    * `CREDENTIAL-NAME` is the name for the updated credential you want to provide to services
+       that are not running on TAS for VMs.
     * `CREDENTIAL-VALUE` is the value of the credential.
     <p class="note">
       <strong>Note</strong>: You can update multiple credentials as a JSON list.

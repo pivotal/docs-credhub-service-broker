@@ -3,11 +3,11 @@ title: Release Notes for CredHub Service Broker
 owner: CredHub
 ---
 
-This topic contains the release notes for CredHub Service Broker for <%= vars.platform_old %> (PCF).
+This topic contains the release notes for CredHub Service Broker.
 
 ##<a id="lts"></a> Long-Term Support for CredHub Service Broker v2.3
 
-CredHub Service Broker v1.5 is the long-term supported (LTS) version of CredHub Service Broker. CredHub Service Broker v1.5 will be supported through April 2022. 
+CredHub Service Broker v1.5 is the long-term supported (LTS) version of CredHub Service Broker. CredHub Service Broker v1.5 will be supported through April 2022.
 
 Over the lifecycle of CredHub Service Broker v1.5, VMware will release security patches that occasionally include bug fixes and maintenance updates.
 
@@ -55,8 +55,7 @@ There are no known issues for this release.
 
 ### Resolved Issues
 
-+ The `pre_start` script for `deploy-all` is now compatible with <%= vars.app_runtime_full %>
-  (<%= vars.app_runtime_abbr %>) v2.8.
++ The `pre_start` script for `deploy-all` is now compatible with Pivotal Application Service (PAS) v2.8.
 
 ### Known Issues
 
@@ -70,14 +69,14 @@ This release has the following issue:
 
 ### Resolved Issues
 
-+ For <%= vars.app_runtime_abbr %> v2.7 and earlier,
++ For PAS v2.7 and earlier,
 the `pre_start` script for `deploy-all` errands no longer fails on `awk` calls.
 
 ### Known Issues
 
 This release has the following issue:
 
-* For <%= vars.app_runtime_abbr %> v2.8 and later,
+* For PAS v2.8 and later,
 the `pre_start` script for the `deploy-all` errand fails on `jq` calls.
 
 ##<a id="1-4-4"></a> v1.4.4
@@ -190,7 +189,7 @@ There are no known issues for this release.
 ### Features
 
 * Makes tile compatible with CredHub 2.0
-* Makes tile compatible with <%= vars.ops_manager %> 2.3 and <%= vars.ops_manager %> 2.4
+* Makes tile compatible with Ops Manager 2.3 and Ops Manager 2.4
 
 ### Known Issues
 
@@ -245,7 +244,7 @@ First CredHub Service Broker for PCF release.
 
 ### Features
 
-* Provides secure access to service credentials for services that are not running on <%= vars.app_runtime_full %> (<%= vars.app_runtime_abbr %>)
+* Provides secure access to service credentials for services that are not running on PAS
 * Allows developers to pass custom JSON to their app through service creation
 
 ### Known Issue

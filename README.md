@@ -1,6 +1,8 @@
-## CredHub Service Broker for PCF ##
+## CredHub Service Broker ##
 
-This repo contains the documentation for the CredHub Service Broker for PCF service tile.
+This repo contains the documentation for the CredHub Service Broker service tile.
+
+This product was formerly known as CredHub Service Broker for PCF.
 
 The `master` branch is the only published branch. This branch is protected.
 
