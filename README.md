@@ -13,7 +13,7 @@ https://github.com/pivotal-cf/docs-book-pcfservices
 
 ## Contributing to Documentation
 
-If there is some documentation to add for an unreleased patch version of Cloud Service Broker then create a branch off of the **live** branch
+If there is some documentation to add for an unreleased patch version, then create a branch off of the **live** branch
 you intend to modify and create a pull request against that branch.
 After the version that change is targeting is released, the pull request can be merged and will be live
 the next time a documentation deployment occurs.
@@ -92,4 +92,4 @@ replacing the publication with the same version.
 
 ## Style Guide
 
-This is a word list for terminology and word usage specific to the Cloud Service Broker for docs.
+This is a word list for terminology and word usage specific to the CredHub Service Broker docs.
