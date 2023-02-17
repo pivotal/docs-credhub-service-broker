@@ -5,126 +5,129 @@ owner: CredHub
 
 This topic describes how to use CredHub Service Broker.
 
-##<a id='create'></a> Create and Bind a Service Instance
+## <a id='create'></a> Create and Bind a Service Instance
 
-Creating a Credhub Service Broker instance and binding it to an app creates a credential in CredHub and provides the reference
-to that credential in the app environment.
-This allows developers to deploy apps that can securely access
-credentials for services that are not running on VMware Tanzu Application Service for VMs (TAS for VMs).
+Creating a CredHub Service Broker instance and binding it to an app creates a credential in CredHub
+and provides the reference to that credential in the app environment.
+This allows developers to deploy apps that can securely access credentials for services that are not
+running on VMware Tanzu Application Service for VMs (TAS for VMs).
 
-To create a service instance of the CredHub Service Broker and bind it to your app, perform the following steps:
+To create a service instance of the CredHub Service Broker and bind it to your app:
 
-1. Create a CredHub Service Broker service instance.
-Run the following command:
+1. Create a CredHub Service Broker service instance by running:
 
-    ```
-    cf create-service credhub default SERVICE-INSTANCE \
-     -c '{"CREDENTIAL-NAME":"CREDENTIAL-VALUE"}'
-    ```
-    Where:
-    
-    * `SERVICE-INSTANCE` is a name for your new service instance.
-    * `CREDENTIAL-NAME` is the name for the credential you want to provide to services that are not running on TAS for VMs.
-    * `CREDENTIAL-VALUE` is the value of the credential.
-    <p class="note">
-      <strong>Note</strong>: You can provide multiple credentials as a JSON list.
-      This JSON list has a maximum size of 64 KB. For example,
-      <code>{"MY\_CREDHUB\_CRED": "1234", "MY\_CREDHUB\_CRED2": "5678"}</code>.
-    </p>
+   ```console
+   cf create-service credhub default SERVICE-INSTANCE \
+   -c '{"CREDENTIAL-NAME":"CREDENTIAL-VALUE"}'
+   ```
 
-    For example:
-    <pre class="terminal">
-    $ cf create-service credhub default my-credhub-instance \
-      -c '{"name":"MY\_CREDHUB\_CRED","value":"ABCDEFGHIJK123456789"}'
-    </pre>
+   Where:
 
-1. Ensure that your app is written to use the credential that was provided through the service creation.
-	<br><br>
-	`VCAP_SERVICES` is an environment variable that exists in every container. Access the `credhub` JSON object within `VCAP_SERVICES` to discover the credentials. For example, in Ruby you would access this JSON object with `ENV['VCAP_SERVICES']['credhub']`.
-	<br><br>
-	If you need to modify your app code, you must re-push the app before continuing.
+   - `SERVICE-INSTANCE` is a name for your new service instance.
+   - `CREDENTIAL-NAME` is the name for the credential you want to provide to services that are not
+     running on TAS for VMs.
+   - `CREDENTIAL-VALUE` is the value of the credential.
 
-1. Bind the CredHub Service Broker service instance to your app.
-	Run the following command:
+   > **Note** You can provide multiple credentials as a JSON list.
+   > This JSON list has a maximum size of 64&nbsp;KB. For example,
+   > `{"MY\_CREDHUB\_CRED": "1234", "MY\_CREDHUB\_CRED2": "5678"}`.
 
-    ```
-    cf bind-service MY-APP SERVICE-INSTANCE
-    ```
+   For example:
 
-1. Restart your app.
-	Run the following command:
+   ```console
+   $ cf create-service credhub default my-credhub-instance \
+   -c '{"name":"MY\_CREDHUB\_CRED","value":"ABCDEFGHIJK123456789"}'
+   ```
 
-    ```
-    cf restart MY-APP
-    ```
+2. Ensure that your app is written to use the credential that was provided through the service
+   creation. `VCAP_SERVICES` is an environment variable that exists in every container.
 
-1. Your app should now have access to the credential created in step 1.
-To verify that your credential is in the app environment, run the following command and locate the CredHub reference under `VCAP_SERVICES` in the output:
+   Access the `credhub` JSON object within `VCAP_SERVICES` to discover the credentials.
+   For example, in Ruby you access this JSON object with `ENV['VCAP_SERVICES']['credhub']`.
 
-    ```
-    cf env MY-APP
-    ```
-    For example:
-    <pre class="terminal">
-    $ cf env my-app
-    Getting env variables for app my-app in org example / space example as admin...
-    OK
-    System-Provided:
+   If you need to edit your app code, you must re-push the app before continuing.
+
+3. Bind the CredHub Service Broker service instance to your app by running:
+
+   ```console
+   cf bind-service APP-NAME SERVICE-INSTANCE
+   ```
+
+4. Restart your app by running:
+
+   ```console
+   cf restart APP-NAME
+   ```
+
+5. Your app now has access to the credential created earlier. Verify that your credential is in the
+   app environment by running the following command and locate the CredHub reference under
+   `VCAP_SERVICES` in the output:
+
+   ```console
+   cf env APP-NAME
+   ```
+
+   For example:
+
+   ```console
+   $ cf env my-app
+   Getting env variables for app my-app in org example / space example as admin...
+   OK
+   System-Provided:
+   {
+   "VCAP\_SERVICES": {
+   "credhub": [
     {
-     "VCAP\_SERVICES": {
-      "credhub": [
-       {
-        "binding\_name": null,
-        "credentials": {
-         "credhub-ref": "/credhub-service-broker/credhub/ac517e09-2f5e-475a-bf87-ca4275faa536/credentials"
-        },
-        "instance\_name": "credhub",
-        "label": "credhub",
-        "name": "credhub",
-        "plan": "default",
-        "provider": null,
-        "syslog\_drain\_url": null,
-        "tags": [
-         "credhub"
-        ],
-        "volume\_mounts": []
-       }
-      ]
-     }
+     "binding\_name": null,
+     "credentials": {
+      "credhub-ref": "/credhub-service-broker/credhub/ac517e09-2f5e-475a-bf87-ca4275faa536/credentials"
+     },
+     "instance\_name": "credhub",
+     "label": "credhub",
+     "name": "credhub",
+     "plan": "default",
+     "provider": null,
+     "syslog\_drain\_url": null,
+     "tags": [
+      "credhub"
+     ],
+     "volume\_mounts": []
     }
-    </pre>
+   ]
+   }
+   }
+   ```
 
-##<a id='update'></a> Update Credentials
+## <a id='update'></a> Update Credentials
 
-Perform the following steps to update the credentials in a CredHub Service Broker service instance:
+To update the credentials in a CredHub Service Broker service instance:
 
-1. Create a CredHub Service Broker service instance.
-Run the following command:
+1. Create a CredHub Service Broker service instance by running:
 
-    ```
-    cf update-service SERVICE-INSTANCE \
-     -c '{"CREDENTIAL-NAME":"CREDENTIAL-VALUE"}'
-    ```
-    Where:
-    
-    * `SERVICE-INSTANCE` is the name of your existing CredHub Service Broker service instance.
-    * `CREDENTIAL-NAME` is the name for the updated credential you want to provide to services
-       that are not running on TAS for VMs.
-    * `CREDENTIAL-VALUE` is the value of the credential.
-    <p class="note">
-      <strong>Note</strong>: You can update multiple credentials as a JSON list.
-      For example, <code>{"MY\_CREDHUB\_CRED": "1234", "MY\_CREDHUB\_CRED2": "5678"}</code>.
-    </p>
+   ```console
+   cf update-service SERVICE-INSTANCE \
+   -c '{"CREDENTIAL-NAME":"CREDENTIAL-VALUE"}'
+   ```
 
-    For example:
-    <pre class="terminal">
-    $ cf update-service SERVICE-INSTANCE \
-      -c '{"name":"MY\_CREDHUB\_CRED","value":"ABCDEFGHIJK123456789"}'
-    </pre>
+   Where:
 
-1. Restart your app.
-	Run the following command:
+   - `SERVICE-INSTANCE` is the name of your existing CredHub Service Broker service instance.
+   - `CREDENTIAL-NAME` is the name for the updated credential you want to provide to services that
+     are not running on TAS for VMs.
+   - `CREDENTIAL-VALUE` is the value of the credential.
 
-    ```
-    cf restart MY-APP
-    ```
+   > **Note** You can update multiple credentials as a JSON list.
+   > For example, `{"MY\_CREDHUB\_CRED": "1234", "MY\_CREDHUB\_CRED2": "5678"}`.
+
+   For example:
+
+   ```console
+   $ cf update-service SERVICE-INSTANCE \
+   -c '{"name":"MY\_CREDHUB\_CRED","value":"ABCDEFGHIJK123456789"}'
+   ```
+
+2. Restart your app by running:
+
+   ```console
+   cf restart APP-NAME
+   ```
