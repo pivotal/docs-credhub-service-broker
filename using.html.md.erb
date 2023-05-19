@@ -30,14 +30,14 @@ To create a service instance of the CredHub Service Broker and bind it to your a
 
    > **Note** You can provide multiple credentials as a JSON list.
    > This JSON list has a maximum size of 64&nbsp;KB. For example,
-   > `{"MY\_CREDHUB\_CRED": "1234", "MY\_CREDHUB\_CRED2": "5678"}`.
+   > `{"MY_CREDHUB_CRED": "1234", "MY_CREDHUB_CRED2": "5678"}`.
 
    For example:
 
-   ```console
+   <pre class="terminal">
    $ cf create-service credhub default my-credhub-instance \
-   -c '{"name":"MY\_CREDHUB\_CRED","value":"ABCDEFGHIJK123456789"}'
-   ```
+   -c '{"name":"MY_CREDHUB_CRED","value":"ABCDEFGHIJK123456789"}'
+   </pre>
 
 2. Ensure that your app is written to use the credential that was provided through the service
    creation. `VCAP_SERVICES` is an environment variable that exists in every container.
@@ -69,34 +69,34 @@ To create a service instance of the CredHub Service Broker and bind it to your a
 
    For example:
 
-   ```console
+   <pre class="terminal">
    $ cf env my-app
    Getting env variables for app my-app in org example / space example as admin...
    OK
    System-Provided:
    {
-   "VCAP\_SERVICES": {
+   "VCAP_SERVICES": {
    "credhub": [
     {
-     "binding\_name": null,
+     "binding_name": null,
      "credentials": {
       "credhub-ref": "/credhub-service-broker/credhub/ac517e09-2f5e-475a-bf87-ca4275faa536/credentials"
      },
-     "instance\_name": "credhub",
+     "instance_name": "credhub",
      "label": "credhub",
      "name": "credhub",
      "plan": "default",
      "provider": null,
-     "syslog\_drain\_url": null,
+     "syslog_drain_url": null,
      "tags": [
       "credhub"
      ],
-     "volume\_mounts": []
+     "volume_mounts": []
     }
    ]
    }
    }
-   ```
+   </pre>
 
 ## <a id='update'></a> Update Credentials
 
@@ -117,14 +117,14 @@ To update the credentials in a CredHub Service Broker service instance:
    - `CREDENTIAL-VALUE` is the value of the credential.
 
    > **Note** You can update multiple credentials as a JSON list.
-   > For example, `{"MY\_CREDHUB\_CRED": "1234", "MY\_CREDHUB\_CRED2": "5678"}`.
+   > For example, `{"MY_CREDHUB_CRED": "1234", "MY_CREDHUB_CRED2": "5678"}`.
 
    For example:
 
-   ```console
+   <pre class="terminal">
    $ cf update-service SERVICE-INSTANCE \
-   -c '{"name":"MY\_CREDHUB\_CRED","value":"ABCDEFGHIJK123456789"}'
-   ```
+   -c '{"name":"MY_CREDHUB_CRED","value":"ABCDEFGHIJK123456789"}'
+   </pre>
 
 2. Restart your app by running:
 
