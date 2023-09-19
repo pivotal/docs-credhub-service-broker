@@ -36,7 +36,7 @@ To create a service instance of the CredHub Service Broker and bind it to your a
 
     <pre class="terminal">
     $ cf create-service credhub default my-credhub-instance \
-    -c '{"name":"MY_CREDHUB_CRED","value":"ABCDEFGHIJK123456789"}'
+    -c '{"MY_CREDHUB_CRED":"1234","MY_CREDHUB_CRED2":"5678"}'
     </pre>
 
 2. Ensure that your app is written to use the credential that was provided through the service
@@ -123,7 +123,7 @@ To update the credentials in a CredHub Service Broker service instance:
 
     <pre class="terminal">
     $ cf update-service SERVICE-INSTANCE \
-    -c '{"name":"MY_CREDHUB_CRED","value":"ABCDEFGHIJK123456789"}'
+    -c '{"MY_CREDHUB_CRED":"1234","MY_CREDHUB_CRED2":"5678"}'
     </pre>
 
 2. Restart your app by running:
