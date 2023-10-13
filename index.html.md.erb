@@ -1,20 +1,19 @@
 # Overview of CredHub Service Broker
 
-CredHub Service Broker allows apps running on VMware Tanzu Application Service for VMs
-(TAS for VMs) to access secure credentials in CredHub.
+CredHub Service Broker allows apps running on VMware Tanzu Application Service for VMs (TAS for VMs)
+to access secure credentials in CredHub.
 
-Apps can use these credentials to authenticate with services not on TAS for VMs,
-including services running on Ops Manager such as Spring Cloud Services and services external to Ops Manager.
+Apps can use these credentials to authenticate with services not on TAS for VMs, including services
+running on Ops Manager such as Spring Cloud Services and services external to Ops Manager.
 
-The CredHub Service Broker uses secure binding credentials to prevent credential exposure in
-the app environment.
+The CredHub Service Broker uses secure binding credentials to prevent credential exposure in the app
+environment.
 
 ## <a id='overview'></a>Overview
 
 The CredHub Service Broker registers a service broker with TAS for VMs and exposes its service plans
-on the Marketplace.
-Developers can then create service instances using Apps Manager or the Cloud Foundry Command
-Line Interface (cf CLI) and bind them to their apps.
+on the Marketplace. Developers can then create service instances using Apps Manager or the Cloud
+Foundry Command Line Interface (cf CLI) and bind them to their apps.
 
 Creating a CredHub Service Broker instance and binding it to an app creates a credential in CredHub
 and provides the reference to that credential in the app environment.
@@ -23,12 +22,13 @@ running on TAS for VMs.
 
 ## <a id='features'></a>Key Feature
 
-The key feature of CredHub Service Broker is secure access to service credentials for services
-that are not running on TAS for VMs.
+The key feature of CredHub Service Broker is secure access to service credentials for services that
+are not running on TAS for VMs.
 
 ## <a id="snapshot"></a>Product Snapshot
 
-The following table provides version and version-support information about the 1.6 release line of CredHub Service Broker.
+The following table provides version and version-support information about the v1.6 release line of
+CredHub Service Broker.
 
 <table class="nice">
     <th>Element</th>
@@ -63,7 +63,8 @@ The following table provides version and version-support information about the 1
     </tr>
 </table>
 
-The following table provides version and version-support information about the 1.5 release line of CredHub Service Broker.
+The following table provides version and version-support information about the v1.5 release line of
+CredHub Service Broker.
 
 <table class="nice">
     <th>Element</th>
