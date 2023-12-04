@@ -1,17 +1,20 @@
-## CredHub Service Broker ##
+# CredHub Service Broker
 
 This repo contains the documentation for the CredHub Service Broker service tile.
 
 This product was formerly known as CredHub Service Broker for PCF.
 
+## Branches
+
 The `main` branch is the only published branch. This branch is protected.
 
-This documentation publishes to the staging site at https://docs-staging.vmware.com/en/CredHub-Service-Broker/index.html and to the production site at https://docs.vmware.com/en/CredHub-Service-Broker/index.html.
+This documentation publishes to the staging site at https://docs-staging.vmware.com/en/CredHub-Service-Broker/services/credhub/GUID-index.html and to the production site at https://docs.vmware.com/en/CredHub-Service-Broker/services/credhub/GUID-index.html. The production landing page is at https://docs.vmware.com/en/CredHub-Service-Broker/index.html.
 
-## Which Book?
+## Which book?
+
 https://github.com/pivotal-cf/docs-book-pcfservices
 
-## Contributing to Documentation
+## Contributing to documentation
 
 If there is some documentation to add for an unreleased patch version, then create a branch off of the **live** branch
 you intend to modify and create a pull request against that branch.
@@ -29,14 +32,15 @@ pull request using a fork, see
 in the documentation team wiki.
 
 
-## Publishing Docs
+## Publishing docs
 
 - [docworks](https://docworks.vmware.com/) is the main tool for managing docs used by writers.
 - [docsdash](https://docsdash.vmware.com/) is a deployment UI which manages the promotion from
 staging to pre-prod to production. The process below describes how to upload our docs to staging,
 replacing the publication with the same version.
 
-### Prepare Markdown Files
+### Prepare Markdown files
+
 - Markdown files live in this repo.
 - Images should live in an `images` directory at the same level and linked with a relative link.
 - Each page requires an entry in [config/toc.md](config/toc.md) for the table of contents.
@@ -49,7 +53,7 @@ replacing the publication with the same version.
 
    There should be an entry with a blue link which says `Documentation` and points to staging.
 
-### Promoting to Pre-Prod and Prod
+### Promoting to pre-prod and prod
 
 **Prerequisite** Needs additional privileges - reach out to a manager on the docs team [#tanzu-docs](https://vmware.slack.com/archives/C055V2M0H) or ask a writer to do this step for you.
 
@@ -90,6 +94,6 @@ replacing the publication with the same version.
 | Symptom:| VMware publishing system doesn't accept code tags after the three back ticks.|
 | Solution: | Make sure you're not using `shell` or `bash` or `console` or `yaml` after back ticks.|
 
-## Style Guide
+## Style guide
 
 This is a word list for terminology and word usage specific to the CredHub Service Broker docs.
